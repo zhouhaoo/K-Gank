@@ -18,13 +18,14 @@ package com.zhouhaoo.sample.mvp.ui.activity
 
 import android.os.Bundle
 import com.zhouhaoo.common.base.BaseActivity
+import com.zhouhaoo.common.mvp.EmptyPrestener
 import com.zhouhaoo.sample.R
 import com.zhouhaoo.sample.mvp.ui.fragment.SettingFragment
 
 /**
  * Created by zhou on 18/2/28.
  */
-class SettingActivity : BaseActivity() {
+class SettingActivity : BaseActivity<EmptyPrestener>() {
 
     override fun initView(savedInstanceState: Bundle?): Int {
         return R.layout.activity_setting

@@ -24,14 +24,19 @@ import android.view.ViewGroup
 import com.trello.rxlifecycle2.android.FragmentEvent
 import com.zhouhaoo.common.base.delegate.IFragment
 import com.zhouhaoo.common.integration.lifecycle.FragmentLifecycleable
+import com.zhouhaoo.common.mvp.IPresenter
 import com.zhouhaoo.common.mvp.IView
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
+import javax.inject.Inject
 
 /**
  * Created by zhou on 18/2/27.
  */
-abstract class BaseFragment : Fragment(), IFragment, IView, FragmentLifecycleable {
+abstract class BaseFragment<P:IPresenter> : Fragment(), IFragment, IView, FragmentLifecycleable {
+
+    @Inject
+    lateinit var mPresenter: P
 
     private val mLifecycleSubject = BehaviorSubject.create<FragmentEvent>()
 

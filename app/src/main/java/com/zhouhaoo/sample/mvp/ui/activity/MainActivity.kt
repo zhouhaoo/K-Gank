@@ -20,7 +20,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.zhouhaoo.common.base.BaseMvpActivity
+import com.zhouhaoo.common.base.BaseActivity
 import com.zhouhaoo.sample.BaseData
 import com.zhouhaoo.sample.Data
 import com.zhouhaoo.sample.R
@@ -31,7 +31,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import java.util.*
 
-class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.View {
+class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
 
     override fun initView(savedInstanceState: Bundle?): Int {
         return R.layout.activity_main
