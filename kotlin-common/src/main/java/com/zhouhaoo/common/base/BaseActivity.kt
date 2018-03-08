@@ -21,15 +21,20 @@ import android.support.v7.app.AppCompatActivity
 import com.trello.rxlifecycle2.android.ActivityEvent
 import com.zhouhaoo.common.base.delegate.IActivity
 import com.zhouhaoo.common.integration.lifecycle.ActivityLifecycleable
+import com.zhouhaoo.common.mvp.IPresenter
 import com.zhouhaoo.common.mvp.IView
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.Subject
+import javax.inject.Inject
 
 /**
  * Created by zhou on 17/11/14.
  */
-abstract class BaseActivity : AppCompatActivity(), ActivityLifecycleable,
+abstract class BaseActivity<P: IPresenter> : AppCompatActivity(), ActivityLifecycleable,
         IActivity, IView {
+
+    @Inject
+    lateinit var mPresenter: P
 
     private val mLifecycleSubject = BehaviorSubject.create<ActivityEvent>()
 

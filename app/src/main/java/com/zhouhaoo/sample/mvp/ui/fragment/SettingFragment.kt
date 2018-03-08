@@ -19,7 +19,7 @@ package com.zhouhaoo.sample.mvp.ui.fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.zhouhaoo.common.base.BaseMvpFragment
+import com.zhouhaoo.common.base.BaseFragment
 import com.zhouhaoo.sample.R
 import com.zhouhaoo.sample.mvp.contract.SettingContract
 import com.zhouhaoo.sample.mvp.presenter.SettingPresenter
@@ -28,7 +28,7 @@ import kotlinx.android.synthetic.main.fragment_setting.*
 /**
  * Created by zhou on 18/2/28.
  */
-class SettingFragment : BaseMvpFragment<SettingPresenter>(), SettingContract.View {
+class SettingFragment : BaseFragment<SettingPresenter>(), SettingContract.View {
 
     override fun showLoading() {
     }
